@@ -29,5 +29,6 @@ class MainActivity : AppCompatActivity() {
             emit(it)
             delay(300)
         }
-    }
+        Log.i(TAG, "Finish flow")
+    }.flowOn(Dispatchers.Default)
 }

@@ -30,5 +30,10 @@ class MainActivity : AppCompatActivity() {
             delay(300)
         }
         Log.i(TAG, "Finish flow")
-    }.flowOn(Dispatchers.Default)
+    }
+            .map {
+                Log.i(TAG, "map")
+                it * it
+            }
+            .flowOn(Dispatchers.Default)
 }

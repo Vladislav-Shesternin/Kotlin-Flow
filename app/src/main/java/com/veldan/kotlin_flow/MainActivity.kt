@@ -26,5 +26,14 @@ class MainActivity : AppCompatActivity() {
             .onStart {
                 Log.i(TAG, "Start flow")
             }
+            .onEach {
+                Log.i(TAG, "flow: $it")
+                delay(1000)
+            }
+            .map {
+                Log.i(TAG, "map")
+                it * it
+            }
             .flowOn(Dispatchers.Default)
+
 }

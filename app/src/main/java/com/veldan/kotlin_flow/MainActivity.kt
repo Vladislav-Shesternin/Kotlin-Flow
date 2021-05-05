@@ -23,20 +23,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFlow() = flowOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
-            .onStart {
-                Log.i(TAG, "Start flow")
-            }
             .onEach {
                 Log.i(TAG, "flow: $it")
                 delay(1000)
             }
-            .map {
-                Log.i(TAG, "map")
-                it * it
-            }
-            .onCompletion {
-                Log.i(TAG, "Finish flow")
-            }
+            .filter { it > 5 }
             .flowOn(Dispatchers.Default)
 
 }

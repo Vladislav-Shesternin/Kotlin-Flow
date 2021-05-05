@@ -22,18 +22,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initFlow() = flow {
-        Log.i(TAG, "Start flow")
-        (1..10).forEach {
-            Log.i(TAG, "flow: $it")
-            emit(it)
-            delay(300)
-        }
-        Log.i(TAG, "Finish flow")
-    }
-            .map {
-                Log.i(TAG, "map")
-                it * it
-            }
-            .flowOn(Dispatchers.Default)
+    private fun initFlow() = (1..10).asFlow()
+
 }

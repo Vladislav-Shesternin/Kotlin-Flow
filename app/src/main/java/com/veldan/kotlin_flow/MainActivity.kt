@@ -34,6 +34,9 @@ class MainActivity : AppCompatActivity() {
                 Log.i(TAG, "map")
                 it * it
             }
+            .onCompletion {
+                Log.i(TAG, "Finish flow")
+            }
             .flowOn(Dispatchers.Default)
 
 }

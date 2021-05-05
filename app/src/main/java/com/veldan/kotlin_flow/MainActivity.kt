@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initFlow() = (1..10).asFlow()
+    private fun initFlow() = flowOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
             .onStart {
                 Log.i(TAG, "Start flow")
             }

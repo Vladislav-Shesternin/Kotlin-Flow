@@ -23,5 +23,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initFlow() = (1..10).asFlow()
-
+            .onStart {
+                Log.i(TAG, "Start flow")
+            }
+            .flowOn(Dispatchers.Default)
 }
